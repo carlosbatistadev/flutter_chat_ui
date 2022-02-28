@@ -25,8 +25,8 @@ Color getUserAvatarNameColor(types.User user, List<Color> colors) =>
 String getUserInitials(types.User user) {
   String initials = '';
 
-  if ((user.firstName ?? '').isNotEmpty) {
-    initials += user.firstName![0].toUpperCase();
+  if ((user.displayName ?? '').isNotEmpty) {
+    initials += user.displayName![0].toUpperCase();
   }
 
   if ((user.lastName ?? '').isNotEmpty) {
@@ -38,7 +38,7 @@ String getUserInitials(types.User user) {
 
 /// Returns user name as joined firstName and lastName
 String getUserName(types.User user) =>
-    '${user.firstName ?? ''} ${user.lastName ?? ''}'.trim();
+    '${user.displayName ?? ''} ${user.lastName ?? ''}'.trim();
 
 /// Returns formatted date used as a divider between different days in the
 /// chat history
